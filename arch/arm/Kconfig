@@ -580,6 +580,10 @@ config ARCH_ZYNQMP
 config TEGRA
 	bool "NVIDIA Tegra"
 
+config ARCH_VERSATILE
+	bool "QEMU Versatile emulation"
+	select CPU_ARM926EJS
+
 config TARGET_VEXPRESS64_AEMV8A
 	bool "Support vexpress_aemv8a"
 	select ARM64
@@ -771,6 +775,8 @@ source "arch/arm/cpu/armv8/zynqmp/Kconfig"
 source "arch/arm/cpu/armv8/Kconfig"
 
 source "arch/arm/imx-common/Kconfig"
+
+source "arch/arm/mach-versatile/Kconfig"
 
 source "board/BuR/kwb/Kconfig"
 source "board/BuR/tseries/Kconfig"

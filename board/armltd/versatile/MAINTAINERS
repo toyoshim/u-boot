@@ -1,0 +1,6 @@
+VERSATILE BOARD
+#M:	Takashi Toyoshima <toyoshim@gmail.com>
+S:	Maintained
+F:	board/armltd/versatile/
+F:	include/configs/versatile.h
+F:	configs/versatile_defconfig

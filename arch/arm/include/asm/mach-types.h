@@ -81,7 +81,7 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_OMAP_H2              382
 #define MACH_TYPE_E740                 384
 #define MACH_TYPE_IQ80331              385
-#define MACH_TYPE_VERSATILE_PB         387
+#define MACH_TYPE_VERSATILE            387
 #define MACH_TYPE_KEV7A400             388
 #define MACH_TYPE_LPD7A400             389
 #define MACH_TYPE_LPD7A404             390
@@ -117,7 +117,6 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_NSLU2                597
 #define MACH_TYPE_E400                 598
 #define MACH_TYPE_IXDPG425             604
-#define MACH_TYPE_VERSATILE_AB         606
 #define MACH_TYPE_EDB9307              607
 #define MACH_TYPE_KB9200               612
 #define MACH_TYPE_SX1                  613
@@ -1936,16 +1935,16 @@ extern unsigned int __machine_arch_type;
 # define machine_is_iq80331()	(0)
 #endif
 
-#ifdef CONFIG_ARCH_VERSATILE_PB
+#ifdef CONFIG_ARCH_VERSATILE
 # ifdef machine_arch_type
 #  undef machine_arch_type
 #  define machine_arch_type	__machine_arch_type
 # else
-#  define machine_arch_type	MACH_TYPE_VERSATILE_PB
+#  define machine_arch_type	MACH_TYPE_VERSATILE
 # endif
-# define machine_is_versatile_pb()	(machine_arch_type == MACH_TYPE_VERSATILE_PB)
+# define machine_is_versatile()	(machine_arch_type == MACH_TYPE_VERSATILE)
 #else
-# define machine_is_versatile_pb()	(0)
+# define machine_is_versatile()	(0)
 #endif
 
 #ifdef CONFIG_MACH_KEV7A400
@@ -2366,18 +2365,6 @@ extern unsigned int __machine_arch_type;
 # define machine_is_ixdpg425()	(machine_arch_type == MACH_TYPE_IXDPG425)
 #else
 # define machine_is_ixdpg425()	(0)
-#endif
-
-#ifdef CONFIG_MACH_VERSATILE_AB
-# ifdef machine_arch_type
-#  undef machine_arch_type
-#  define machine_arch_type	__machine_arch_type
-# else
-#  define machine_arch_type	MACH_TYPE_VERSATILE_AB
-# endif
-# define machine_is_versatile_ab()	(machine_arch_type == MACH_TYPE_VERSATILE_AB)
-#else
-# define machine_is_versatile_ab()	(0)
 #endif
 
 #ifdef CONFIG_MACH_EDB9307
